@@ -10,16 +10,16 @@ Options:
 	--version     Show version
 """
 
+
 from docopt import docopt
-from github3 import login
-from getpass import getpass
-from os import expanduser, join
+from parser.parser import ArgumentParser
 
 
 # @TODO: import version from init file
 def main():
 	args = docopt(__doc__, version='Octogrid 0.0.0')
-	print args
+	parser = ArgumentParser(args)
+	parser.action()
 
 
 if __name__ == '__main__':
