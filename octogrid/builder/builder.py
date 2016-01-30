@@ -12,6 +12,7 @@ NODE_PREFIX = '\tnode\n\t[\n'
 NODE_SUFFIX = '\t]\n'
 EDGE_PREFIX = '\tedge\n\t[\n'
 EDGE_SUFFIX = '\t]\n'
+SIGNATURE = '\tComment: created using octogrid [https://git.io/vzhM0]\n'
 
 
 def format_node(id, label):
@@ -25,6 +26,12 @@ def format_edge(source, target):
 	"""
 
 	return EDGE_PREFIX + source + target + EDGE_SUFFIX
+
+def format_content(node, edge):
+	""" Return the formatted GML file content
+	"""
+
+	return FILE_PREFIX + SIGNATURE + node + edge + FILE_SUFFIX
 
 def generate_gml(username, nodes, edges):
 	""" Generate a GML format file representing the given graph attributes
@@ -48,8 +55,8 @@ def generate_gml(username, nodes, edges):
 
 		edge_content += format_edge(edge_source, edge_target)
 
-	# prepared file content
-	content = FILE_PREFIX + node_content + edge_content + FILE_SUFFIX
+	# formatted file content
+	content = format_content(node_content, edge_content)
 
 	with open('{0}.gml'.format(username), 'w') as f:
 		f.write(content)
