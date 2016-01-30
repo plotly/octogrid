@@ -43,13 +43,17 @@ def export_network(user=None):
 	username = user if user is not None else root_user.name
 	graph_nodes.append(username)
 
-	for person in gh.iter_following(username):
-		graph_nodes.append(str(person))
-		graph_edges.append((root_user.login, str(person)))
+	# @TODO: take care of the 'rate limit exceeding' if imposed
+	try:
+		for person in gh.iter_following(username):
+			graph_nodes.append(str(person))
+			graph_edges.append((root_user.login, str(person)))
 
-	for i in range(1, root_user.following):
-		user = gh.user(graph_nodes[i])
-		user_following_edges = [(user.login, str(person)) for person in gh.iter_following(user) if str(person) in graph_nodes]
-		graph_edges += user_following_edges
+		for i in range(1, root_user.following):
+			user = gh.user(graph_nodes[i])
+			user_following_edges = [(user.login, str(person)) for person in gh.iter_following(user) if str(person) in graph_nodes]
+			graph_edges += user_following_edges
+	except Exception, e:
+		raise e
 
 	generate_gml(username, graph_nodes, graph_edges)

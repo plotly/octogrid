@@ -14,6 +14,18 @@ EDGE_PREFIX = '\tedge\n\t[\n'
 EDGE_SUFFIX = '\t]\n'
 
 
+def format_node(id, label):
+	""" Return the formatted string to represent a node
+	"""
+
+	return NODE_PREFIX + id + label + NODE_SUFFIX
+
+def format_edge(source, target):
+	""" Return the formatted string to represent an edge
+	"""
+
+	return EDGE_PREFIX + source + target + EDGE_SUFFIX
+
 def generate_gml(username, nodes, edges):
 	""" Generate a GML format file representing the given graph attributes
 	"""
@@ -24,7 +36,7 @@ def generate_gml(username, nodes, edges):
 		node_id = "\t\tid %d\n" % (i + 1)
 		node_label = "\t\tlabel \"%s\"\n" % (nodes[i])
 
-		node_content += (NODE_PREFIX + node_id + node_label + NODE_SUFFIX)
+		node_content += format_node(node_id, node_label)
 
 	# file segment that represents all the edges in graph
 	edge_content = ""
@@ -34,7 +46,7 @@ def generate_gml(username, nodes, edges):
 		edge_source = "\t\tsource %d\n" % (nodes.index(edge[0]) + 1)
 		edge_target = "\t\ttarget %d\n" % (nodes.index(edge[1]) + 1)
 
-		edge_content += (EDGE_PREFIX + edge_source + edge_target + EDGE_SUFFIX)
+		edge_content += format_edge(edge_source, edge_target)
 
 	# prepared file content
 	content = FILE_PREFIX + node_content + edge_content + FILE_SUFFIX
