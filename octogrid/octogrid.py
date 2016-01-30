@@ -10,14 +10,13 @@ Options:
 	--version     Show version
 """
 
-
+from __init__ import __version__
 from docopt import docopt
 from parser.parser import ArgumentParser
 
 
-# @TODO: import version from init file
 def main():
-	args = docopt(__doc__, version='Octogrid 0.0.0')
+	args = docopt(__doc__, version='Octogrid {0}'.format(__version__))
 	parser = ArgumentParser(args)
 	parser.action()
 

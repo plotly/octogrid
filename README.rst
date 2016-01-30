@@ -18,12 +18,16 @@ octogrid
 .. image:: https://img.shields.io/pypi/dm/octogrid.svg?style=flat-square
     :target: https://pypi.python.org/pypi/octogrid/
     :alt: Downloads
-    
-octogrid in action
-~~~~~~~~~~~~~~~~~~
-.. figure:: https://raw.githubusercontent.com/pravj/octogrid/master/docs/github-network.png
-   :alt: Communities in GitHub Following Network for @pravj
 
 Installation
 ~~~~~~~~~~~~
     pip install octogrid
+
+Usage
+~~~~~
+	octogrid export [--user=<username>]
+
+octogrid in action
+~~~~~~~~~~~~~~~~~~
+.. figure:: https://raw.githubusercontent.com/pravj/octogrid/master/docs/github-network.png
+   :alt: Communities in GitHub Following Network for @pravj
