@@ -1,3 +1,4 @@
+from octogrid import __version__
 import os
 from setuptools import setup
 
@@ -8,7 +9,7 @@ def read(filename):
 
 setup(
     name='octogrid',
-    version='0.0.0',
+    version=__version__,
     author='Pravendra Singh',
     author_email='hackpravj@gmail.com',
     description=('command line tool to export your GitHub network as GML format'),
