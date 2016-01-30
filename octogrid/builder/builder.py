@@ -14,7 +14,7 @@ EDGE_PREFIX = '\tedge\n\t[\n'
 EDGE_SUFFIX = '\t]\n'
 
 
-def generate_gml(nodes, edges):
+def generate_gml(username, nodes, edges):
 	""" Generate a GML format file representing the given graph attributes
 	"""
 
@@ -39,5 +39,5 @@ def generate_gml(nodes, edges):
 	# prepared file content
 	content = FILE_PREFIX + node_content + edge_content + FILE_SUFFIX
 
-	with open('final.gml', 'w') as f:
+	with open('{0}.gml'.format(username), 'w') as f:
 		f.write(content)

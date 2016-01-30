@@ -52,4 +52,4 @@ def export_network(user=None):
 		user_following_edges = [(user.login, str(person)) for person in gh.iter_following(user) if str(person) in graph_nodes]
 		graph_edges += user_following_edges
 
-	generate_gml(graph_nodes, graph_edges)
+	generate_gml(username, graph_nodes, graph_edges)
