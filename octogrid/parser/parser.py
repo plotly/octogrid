@@ -18,7 +18,7 @@ class ArgumentParser:
 
         if self.args['export']:
             user = None
-            if self.args['user']:
-                user = self.args['user']
+            if self.args['--user']:
+                user = self.args['--user']
 
             export_network(user)

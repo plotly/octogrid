@@ -1,4 +1,7 @@
 *.pyc
 /temp
 /venv
+/build
+/dist
+*egg-info/
 test.py

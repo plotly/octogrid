@@ -30,6 +30,7 @@ def has_credentials_stored():
 
 def authenticate():
 	""" Authenticate the user and store the 'token' for further use
+		And return the authentication 'token'
 	"""
 
 	print LOGIN_INIT_MESSAGE
@@ -48,4 +49,6 @@ def authenticate():
 		raise e
 
 	with open(credentials_file, 'w') as f:
-		f.write(instance.token + '\n' + instance.id)
+		f.write(instance.token)
+
+	return instance.token

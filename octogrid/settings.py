@@ -6,5 +6,5 @@ LOGIN_USER_MESSAGE = 'Enter Your GitHub Username'
 APP_DESC = 'command line tool to export your GitHub network in GML format.'
 APP_URL = 'https://github.com/pravj/octogrid'
 
-# default scopes, doesn't access unnecessary permissions
+# default scopes(public access), doesn't access unnecessary permissions
 APP_SCOPE = []
