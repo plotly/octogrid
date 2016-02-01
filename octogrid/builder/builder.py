@@ -7,12 +7,12 @@ This module helps in generating a GML file from the graph content
 """
 
 FILE_PREFIX = 'graph\n[\n'
-FILE_SUFFIX = ']'
+FILE_SUFFIX = ']\n'
 NODE_PREFIX = '\tnode\n\t[\n'
 NODE_SUFFIX = '\t]\n'
 EDGE_PREFIX = '\tedge\n\t[\n'
 EDGE_SUFFIX = '\t]\n'
-SIGNATURE = '\tComment: created using octogrid [https://git.io/vzhM0]\n'
+SIGNATURE = 'Creator "octogrid [https://git.io/vzhM0]"\n'
 
 
 def format_node(id, label):
@@ -33,7 +33,7 @@ def format_content(node, edge):
     """ Return the formatted GML file content
     """
 
-    return FILE_PREFIX + SIGNATURE + node + edge + FILE_SUFFIX
+    return SIGNATURE + FILE_PREFIX + node + edge + FILE_SUFFIX
 
 
 def generate_gml(username, nodes, edges):
