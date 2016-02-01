@@ -11,7 +11,8 @@ from os.path import abspath, expanduser, join
 from getpass import getpass
 from github3 import login, authorize
 
-credentials_file_path = join(expanduser('~'), CREDENTIALS_FILE_NAME)
+credentials_file_path = join(
+    join(expanduser('~'), DIRECTORY), CREDENTIALS_FILE_NAME)
 credentials_file = abspath(credentials_file_path)
 
 
@@ -31,7 +32,7 @@ def has_credentials_stored():
 
 def authenticate():
     """ Authenticate the user and store the 'token' for further use
-            And return the authentication 'token'
+        And return the authentication 'token'
     """
 
     print LOGIN_INIT_MESSAGE

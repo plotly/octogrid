@@ -6,6 +6,8 @@ octogrid.builder.builder
 This module helps in generating a GML file from the graph content
 """
 
+from ..store.store import cache_file
+
 FILE_PREFIX = 'graph\n[\n'
 FILE_SUFFIX = ']\n'
 NODE_PREFIX = '\tnode\n\t[\n'
@@ -36,7 +38,7 @@ def format_content(node, edge):
     return SIGNATURE + FILE_PREFIX + node + edge + FILE_SUFFIX
 
 
-def generate_gml(username, nodes, edges):
+def generate_gml(username, nodes, edges, cache=False):
     """ Generate a GML format file representing the given graph attributes
     """
 
@@ -63,3 +65,7 @@ def generate_gml(username, nodes, edges):
 
     with open('{0}.gml'.format(username), 'w') as f:
         f.write(content)
+
+    # save the file for further use
+    if cache:
+    	cache_file('{0}.gml'.format(username))

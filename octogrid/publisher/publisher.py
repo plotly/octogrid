@@ -74,7 +74,8 @@ def prepare_plot_data(data_file):
                         hoverinfo='text'
                         )
 
-    plot_data.append(trace)
+        plot_data.append(trace)
+
     return plot_data
 
 
@@ -98,6 +99,7 @@ def publish_network(user=None):
 
     width = 800
     height = 800
+
     layout = Layout(title='GitHub Network for {0}'.format(username),
                     font=Font(size=12),
                     showlegend=False,

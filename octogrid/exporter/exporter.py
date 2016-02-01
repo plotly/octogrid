@@ -6,10 +6,10 @@ octogrid.exporter.exporter
 This module helps collecting the network for a user
 """
 
-
 from github3 import login
 from ..auth.auth import has_credentials_stored, authenticate
 from ..builder.builder import generate_gml
+from ..store.store import is_cached, cache_file
 
 
 def collect_token():
@@ -41,22 +41,24 @@ def export_network(user=None):
     graph_edges = []
 
     username = user if user is not None else root_user.name
-    graph_nodes.append(username)
 
-    # @TODO: take care of the 'rate limit exceeding' if imposed
-    try:
-        for person in gh.iter_following(username):
-            graph_nodes.append(str(person))
-            graph_edges.append((root_user.login, str(person)))
+    if not is_cached('{0}.gml'.format(username)):
+    	graph_nodes.append(username)
 
-        for i in range(1, root_user.following):
-            user = gh.user(graph_nodes[i])
-            user_following_edges = [(user.login, str(person)) for person in gh.iter_following(
-                user) if str(person) in graph_nodes]
-            graph_edges += user_following_edges
-    except Exception, e:
-        raise e
+	    # @TODO: take care of the 'rate limit exceeding' if imposed
+	    try:
+	        for person in gh.iter_following(username):
+	            graph_nodes.append(str(person))
+	            graph_edges.append((root_user.login, str(person)))
 
-    generate_gml(username, graph_nodes, graph_edges)
+	        for i in range(1, root_user.following):
+	            user = gh.user(graph_nodes[i])
+	            user_following_edges = [(user.login, str(person)) for person in gh.iter_following(
+	                user) if str(person) in graph_nodes]
+	            graph_edges += user_following_edges
+	    except Exception, e:
+	        raise e
 
-    return username
+	    generate_gml(username, graph_nodes, graph_edges, True)
+
+	return username

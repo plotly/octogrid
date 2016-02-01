@@ -1,3 +1,5 @@
+DIRECTORY = 'octogrid'
+
 CREDENTIALS_FILE_NAME = '.octogrid'
 
 LOGIN_INIT_MESSAGE = 'You need to be logged in to use octogrid.'
