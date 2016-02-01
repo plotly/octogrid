@@ -17,10 +17,10 @@ from parser.parser import ArgumentParser
 
 
 def main():
-	args = docopt(__doc__, version='Octogrid {0}'.format(__version__))
-	parser = ArgumentParser(args)
-	parser.action()
+    args = docopt(__doc__, version='Octogrid {0}'.format(__version__))
+    parser = ArgumentParser(args)
+    parser.action()
 
 
 if __name__ == '__main__':
-	main()
+    main()
