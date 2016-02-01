@@ -2,6 +2,7 @@
 
 Usage:
 	octogrid export [--user=<username>]
+	octogrid publish [--user=<username>]
 	octogrid -h | --help
 	octogrid --version
 

@@ -16,7 +16,7 @@ setup(
     license = 'MIT',
     keywords = 'github network graph',
     url = 'https://github.com/pravj/octogrid',
-    packages=['octogrid', 'octogrid.parser', 'octogrid.exporter', 'octogrid.auth', 'octogrid.builder'],
+    packages=['octogrid', 'octogrid.parser', 'octogrid.exporter', 'octogrid.auth', 'octogrid.builder', 'octogrid.publisher'],
     install_requires=['docopt', 'github3.py', 'requests', 'uritemplate.py', 'wheel'],
     long_description=read('README.rst'),
     entry_points={

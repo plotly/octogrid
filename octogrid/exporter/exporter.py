@@ -28,7 +28,6 @@ def export_network(user=None):
 	"""
 
 	token = collect_token()
-	print token
 
 	try:
 		gh = login(token=token)
@@ -57,3 +56,5 @@ def export_network(user=None):
 		raise e
 
 	generate_gml(username, graph_nodes, graph_edges)
+
+	return username
