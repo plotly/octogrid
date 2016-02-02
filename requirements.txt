@@ -1,9 +1,10 @@
+colorlover==0.2.1
 decorator==4.0.6
 docopt==0.6.2
 github3.py==0.9.4
 ipython==4.0.3
 ipython-genutils==0.1.0
-octogrid==1.0.0
+octogrid==1.1.0
 path.py==8.1.2
 pexpect==4.0.1
 pickleshare==0.6

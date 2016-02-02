@@ -10,7 +10,7 @@ import igraph as ig
 import plotly.plotly as plotly
 from plotly.graph_objs import *
 from ..generator.generator import generate_network
-from ..utils.utils import username_to_file
+from ..utils.utils import username_to_file, community_colors
 
 
 def prepare_plot_data(data_file):
@@ -30,7 +30,9 @@ def prepare_plot_data(data_file):
     communities = len(set(community))
 
     # @TODO: generate color list according to number of communities
-    color_list = ['#6959CD', '#DD5E34', '#69CD45', '#000005']
+    # color_list = ['#6959CD', '#DD5E34', '#69CD45', '#000005']
+
+    color_list = community_colors(communities)
 
     Xn = [layout[k][0] for k in range(N)]
     Yn = [layout[k][1] for k in range(N)]
