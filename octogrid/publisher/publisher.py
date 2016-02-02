@@ -81,12 +81,12 @@ def prepare_plot_data(data_file):
     return plot_data
 
 
-def publish_network(user=None):
+def publish_network(user=None, reset=False):
     """
     Generate graph network for a user and plot it using Plotly
     """
 
-    username = generate_network(user)
+    username = generate_network(user, reset)
     network_file = username_to_file(username)
 
     plot_data = prepare_plot_data(network_file)

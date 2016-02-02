@@ -24,10 +24,19 @@ Powered By
 
 .. image:: https://github.com/pravj/gitpool/raw/master/octogrid/plotly-logo.png
     :alt: Plotly [Image Credit : Pensrulerstape - Own work, CC BY-SA 4.0, $3]
-
+    
 Installation
 ~~~~~~~~~~~~
     pip install octogrid
+    
+How to
+~~~~~~
+- You need to `create an account <https://plot.ly/>`_ on Plotly to see your visualizations, it's free.
+- Once you have an account there, execute the following in your terminal to setup your user credentials.
+
+    python -c "import plotly; plotly.tools.set_credentials_file(username='USERNAME', api_key='APIKEY')"
+    
+- Your API key can be collected `from here <https://plot.ly/settings/api/>`_.
 
 Usage
 ~~~~~
