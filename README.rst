@@ -1,7 +1,7 @@
 octogrid
 ========
 
-    command line tool to export your GitHub network in GML format
+    GitHub following network visualizer for Humans
 
 .. image:: https://img.shields.io/pypi/v/octogrid.svg?style=flat-square
     :target: https://pypi.python.org/pypi/octogrid/
@@ -25,9 +25,21 @@ Installation
 
 Usage
 ~~~~~
-	octogrid export [--user=<username>]
+- **octogrid generate [--reset] [--user=<username>]**
+
+    Generate the GML file for user representing its GitHub following graph
+
+- **octogrid publish [--reset] [--user=<username>]**
+
+    Publish the user's GitHub community graph using Plotly
+    
+**--reset** (*optional*) flag is used to clear the cache storage for a given user
 
 octogrid in action
 ~~~~~~~~~~~~~~~~~~
 .. figure:: https://raw.githubusercontent.com/pravj/octogrid/master/docs/github-network.png
    :alt: Communities in GitHub Following Network for @pravj
+
+License
+~~~~~~~~~~~~
+    MIT © `Pravendra Singh <http://pravj.github.io>`_.

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-octogrid.exporter.exporter
+octogrid.collector.collector
 
 This module helps collecting the network for a user
 """
@@ -24,7 +24,7 @@ def collect_token():
     return previous_token
 
 
-def export_network(user=None, reset=False):
+def collect_network(user=None, reset=False):
     """ Assemble the network connections for a given user
     """
 

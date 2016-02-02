@@ -6,7 +6,7 @@ octogrid.parser.parser
 This module parses command-line arguments and take respective actions
 """
 
-from ..exporter.exporter import export_network
+from ..collector.collector import collect_network
 from ..publisher.publisher import publish_network
 
 
@@ -22,6 +22,6 @@ class ArgumentParser:
         reset = True if self.args['--reset'] else False
 
         if self.args['export']:
-            export_network(user, reset)
+            collect_network(user, reset)
         elif self.args['publish']:
             publish_network(user, reset)

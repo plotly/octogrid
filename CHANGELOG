@@ -1,3 +1,9 @@
+[v1.1.0] - 2016-02-02
+
+- Add command 'publish' that lets you plot graph using Plotly
+- Add feature to cache previously generated network files
+- Fix 'segmentation fault' caused by corrupted GML file
+
 [v1.0.0] - 2016-01-30
 
 - Initial Release
