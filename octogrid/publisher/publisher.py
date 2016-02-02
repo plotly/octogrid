@@ -9,7 +9,7 @@ This module helps with publishing the graph network using Plotly
 import igraph as ig
 import plotly.plotly as plotly
 from plotly.graph_objs import *
-from ..collector.collector import collect_network
+from ..generator.generator import generate_network
 
 
 def prepare_plot_data(data_file):
@@ -83,7 +83,7 @@ def publish_network(user=None):
     """ Generate graph network for a user and plot it using Plotly
     """
 
-    username = collect_network(user)
+    username = generate_network(user)
     network_file = '{0}.gml'.format(username)
 
     plot_data = prepare_plot_data(network_file)

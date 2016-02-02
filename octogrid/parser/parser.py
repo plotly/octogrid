@@ -7,7 +7,7 @@ This module parses command-line arguments and take respective actions
 """
 
 from ..collector.collector import collect_network
-from ..publisher.publisher import publish_network
+from ..generator.generator import generate_network
 
 
 class ArgumentParser:
@@ -22,6 +22,6 @@ class ArgumentParser:
         reset = True if self.args['--reset'] else False
 
         if self.args['export']:
-            collect_network(user, reset)
+            generate_network(user, reset)
         elif self.args['publish']:
             publish_network(user, reset)
