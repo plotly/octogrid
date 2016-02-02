@@ -18,6 +18,12 @@ octogrid
 .. image:: https://img.shields.io/pypi/dm/octogrid.svg?style=flat-square
     :target: https://pypi.python.org/pypi/octogrid/
     :alt: Downloads
+    
+Powered By
+~~~~~~~~~~
+
+.. image:: https://github.com/pravj/gitpool/raw/master/octogrid/plotly-logo.png
+    :alt: Plotly [Image Credit : Pensrulerstape - Own work, CC BY-SA 4.0, $3]
 
 Installation
 ~~~~~~~~~~~~
@@ -37,7 +43,7 @@ Usage
 
 octogrid in action
 ~~~~~~~~~~~~~~~~~~
-.. figure:: https://raw.githubusercontent.com/pravj/octogrid/master/docs/github-network.png
+.. figure:: https://github.com/pravj/gitpool/raw/master/octogrid/github-network.png
    :alt: Communities in GitHub Following Network for @pravj
 
 License

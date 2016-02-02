@@ -17,7 +17,8 @@ credentials_file = abspath(credentials_file_path)
 
 
 def has_credentials_stored():
-    """ Return 'auth token' string, if the user credentials are already stored
+    """
+    Return 'auth token' string, if the user credentials are already stored
     """
 
     try:
@@ -31,8 +32,9 @@ def has_credentials_stored():
 
 
 def authenticate():
-    """ Authenticate the user and store the 'token' for further use
-        And return the authentication 'token'
+    """
+    Authenticate the user and store the 'token' for further use
+    Return the authentication 'token'
     """
 
     print LOGIN_INIT_MESSAGE

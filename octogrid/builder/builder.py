@@ -7,6 +7,7 @@ This module helps in generating a GML file from the graph content
 """
 
 from ..store.store import cache_file, copy_file
+from ..utils.utils import username_to_file
 
 FILE_PREFIX = 'graph\n[\n'
 FILE_SUFFIX = ']\n'
@@ -18,35 +19,40 @@ SIGNATURE = 'Creator "octogrid [https://git.io/vzhM0]"\n'
 
 
 def format_node(id, label):
-    """ Return the formatted string to represent a node
+    """
+    Return the formatted string to represent a node
     """
 
     return NODE_PREFIX + id + label + NODE_SUFFIX
 
 
 def format_edge(source, target):
-    """ Return the formatted string to represent an edge
+    """
+    Return the formatted string to represent an edge
     """
 
     return EDGE_PREFIX + source + target + EDGE_SUFFIX
 
 
 def format_content(node, edge):
-    """ Return the formatted GML file content
+    """
+    Return the formatted GML file content
     """
 
     return SIGNATURE + FILE_PREFIX + node + edge + FILE_SUFFIX
 
 
 def reuse_gml(username):
-    """ Use the cached copy for this username
+    """
+    Use the cached copy for this username
     """
 
-    copy_file('{0}.gml'.format(username))
+    copy_file(username_to_file(username))
 
 
 def generate_gml(username, nodes, edges, cache=False):
-    """ Generate a GML format file representing the given graph attributes
+    """
+    Generate a GML format file representing the given graph attributes
     """
 
     # file segment that represents all the nodes in graph
@@ -70,9 +76,9 @@ def generate_gml(username, nodes, edges, cache=False):
     # formatted file content
     content = format_content(node_content, edge_content)
 
-    with open('{0}.gml'.format(username), 'w') as f:
+    with open(username_to_file(username), 'w') as f:
         f.write(content)
 
     # save the file for further use
     if cache:
-    	cache_file('{0}.gml'.format(username))
+    	cache_file(username_to_file(username))

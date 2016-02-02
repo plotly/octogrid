@@ -1,5 +1,6 @@
-from octogrid import __version__
 import os
+from octogrid.utils import utils
+from octogrid import __version__
 from setuptools import setup
 
 
@@ -12,12 +13,12 @@ setup(
     version=__version__,
     author='Pravendra Singh',
     author_email='hackpravj@gmail.com',
-    description=('command line tool to export your GitHub network as GML format'),
+    description=('GitHub following network visualizer for Humans'),
     license = 'MIT',
-    keywords = 'github network graph',
+    keywords = 'github network graph plotly plot chart visualization',
     url = 'https://github.com/pravj/octogrid',
-    packages=['octogrid', 'octogrid.parser', 'octogrid.generator', 'octogrid.auth', 'octogrid.builder', 'octogrid.publisher', 'octogrid.store'],
-    install_requires=['docopt', 'github3.py', 'requests', 'uritemplate.py', 'wheel'],
+    packages=['octogrid', 'octogrid.parser', 'octogrid.generator', 'octogrid.auth', 'octogrid.builder', 'octogrid.publisher', 'octogrid.store', 'octogrid.utils'],
+    install_requires=utils.build_dependecies(),
     long_description=read('README.rst'),
     entry_points={
         'console_scripts': ['octogrid = octogrid.octogrid:main']

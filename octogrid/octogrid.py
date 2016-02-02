@@ -1,7 +1,7 @@
 """Octogrid: command line tool to export your GitHub network in GML format.
 
 Usage:
-	octogrid collect [--reset] [--user=<username>]
+	octogrid generate [--reset] [--user=<username>]
 	octogrid publish [--reset] [--user=<username>]
 	octogrid -h | --help
 	octogrid --version

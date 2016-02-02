@@ -10,10 +10,12 @@ import igraph as ig
 import plotly.plotly as plotly
 from plotly.graph_objs import *
 from ..generator.generator import generate_network
+from ..utils.utils import username_to_file
 
 
 def prepare_plot_data(data_file):
-    """ Return a list of Plotly elements representing the network graph
+    """
+    Return a list of Plotly elements representing the network graph
     """
 
     G = ig.Graph.Read_GML(data_file)
@@ -80,11 +82,12 @@ def prepare_plot_data(data_file):
 
 
 def publish_network(user=None):
-    """ Generate graph network for a user and plot it using Plotly
+    """
+    Generate graph network for a user and plot it using Plotly
     """
 
     username = generate_network(user)
-    network_file = '{0}.gml'.format(username)
+    network_file = username_to_file(username)
 
     plot_data = prepare_plot_data(network_file)
     data = Data(plot_data)

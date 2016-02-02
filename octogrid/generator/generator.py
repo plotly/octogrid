@@ -10,10 +10,12 @@ from github3 import login
 from ..auth.auth import has_credentials_stored, authenticate
 from ..builder.builder import generate_gml, reuse_gml
 from ..store.store import is_cached, cache_file
+from ..utils.utils import username_to_file
 
 
 def collect_token():
-    """ Collect the authentication token from local storage
+    """
+    Collect the authentication token from local storage
     """
 
     # @TODO: returns 422 if a token is already there for the app
@@ -25,7 +27,8 @@ def collect_token():
 
 
 def generate_network(user=None, reset=False):
-    """ Assemble the network connections for a given user
+    """
+    Assemble the network connections for a given user
     """
 
     token = collect_token()
@@ -40,9 +43,9 @@ def generate_network(user=None, reset=False):
     graph_nodes = []
     graph_edges = []
 
-    username = user if user is not None else root_user.name
+    username = user if user is not None else root_user.login
 
-    if not is_cached('{0}.gml'.format(username)) or reset:
+    if not is_cached(username_to_file(username)) or reset:
         graph_nodes.append(username)
 
         # @TODO: take care of the 'rate limit exceeding' if imposed
