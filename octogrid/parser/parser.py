@@ -18,11 +18,10 @@ class ArgumentParser:
         """ Invoke functions according to the supplied flags
         """
 
-        user = None
-        if self.args['--user']:
-            user = self.args['--user']
+        user = self.args['--user'] if self.args['--user'] else None
+        reset = True if self.args['--reset'] else False
 
         if self.args['export']:
-            export_network(user)
+            export_network(user, reset)
         elif self.args['publish']:
-            publish_network(user)
+            publish_network(user, reset)
