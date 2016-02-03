@@ -29,6 +29,10 @@ Installation
 ~~~~~~~~~~~~
     pip install octogrid
     
+If you are facing issues (on Linux) with 'python-igraph', you should consider installing required libraries first.
+
+    apt-get install -y libigraph0-dev
+    
 How to
 ~~~~~~
 - You need to `create an account <https://plot.ly/>`_ on Plotly to see your visualizations, it's free.
@@ -37,6 +41,7 @@ How to
     python -c "import plotly; plotly.tools.set_credentials_file(username='USERNAME', api_key='APIKEY')"
     
 - Your API key can be collected `from here <https://plot.ly/settings/api/>`_.
+- All these steps aren't compulsory, though. If you leave them, *octogrid* will create plots via its own account.
 
 Usage
 ~~~~~

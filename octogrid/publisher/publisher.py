@@ -6,11 +6,14 @@ octogrid.publisher.publisher
 This module helps with publishing the graph network using Plotly
 """
 
+import string
 import igraph as ig
+from random import choice
 import plotly.plotly as plotly
 from plotly.graph_objs import *
+from os.path import join, expanduser, isfile
 from ..generator.generator import generate_network
-from ..utils.utils import username_to_file, community_colors
+from ..utils.utils import username_to_file, community_colors, login_as_bot
 
 
 def prepare_plot_data(data_file):
@@ -28,9 +31,6 @@ def prepare_plot_data(data_file):
 
     community = G.community_multilevel().membership
     communities = len(set(community))
-
-    # @TODO: generate color list according to number of communities
-    # color_list = ['#6959CD', '#DD5E34', '#69CD45', '#000005']
 
     color_list = community_colors(communities)
 
@@ -105,7 +105,7 @@ def publish_network(user=None, reset=False):
     width = 800
     height = 800
 
-    layout = Layout(title='GitHub Network for {0}'.format(username),
+    layout = Layout(title='GitHub Network for "{0}"'.format(username),
                     font=Font(size=12),
                     showlegend=False,
                     autosize=False,
@@ -138,4 +138,15 @@ def publish_network(user=None, reset=False):
                     )
 
     fig = Figure(data=data, layout=layout)
-    plotly.plot(fig, filename='github-network-community-igraph')
+
+    # use credentials of the bot "octogrid", if user isn't authenticated
+    login_as_bot()
+
+    try:
+        plot_id = ''.join(choice(string.lowercase) for i in range(5))
+        plot_url = plotly.plot(
+            fig, filename='Octogrid: GitHub communities for {0} [v{1}]'.format(username, plot_id))
+
+        print 'Published the network graph at {0}'.format(plot_url)
+    except Exception, e:
+        raise e

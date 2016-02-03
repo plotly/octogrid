@@ -1,4 +1,4 @@
-"""Octogrid: command line tool to export your GitHub network in GML format.
+"""Octogrid: GitHub following network visualizer for Humans.
 
 Usage:
 	octogrid generate [--reset] [--user=<username>]

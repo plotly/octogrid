@@ -1,6 +1,11 @@
-DIRECTORY = 'octogrid'
+OCTOGRID_DIRECTORY = '.octogrid'
+OCTOGRID_CREDENTIALS_FILENAME = '.octogrid'
 
-CREDENTIALS_FILE_NAME = '.octogrid'
+BOT_USERNAME = 'octogrid'
+BOT_API_KEY = 'dl538tl95a'
+
+PLOTLY_DIRECTORY = '.plotly'
+PLOTLY_CREDENTIALS_FILENAME = '.credentials'
 
 LOGIN_INIT_MESSAGE = 'You need to be logged in to use octogrid.'
 LOGIN_USER_MESSAGE = 'Enter Your GitHub Username'
