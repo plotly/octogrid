@@ -65,4 +65,4 @@ Powered By
 
 License
 ~~~~~~~~~~~~
-    MIT © `Pravendra Singh <http://pravj.github.io>`_.
+    MIT © `Plotly <https://plot.ly>`_.
