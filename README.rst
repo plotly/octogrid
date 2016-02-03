@@ -19,11 +19,13 @@ octogrid
     :target: https://pypi.python.org/pypi/octogrid/
     :alt: Downloads
     
-Powered By
-~~~~~~~~~~
+octogrid in action
+~~~~~~~~~~~~~~~~~~
 
-.. image:: https://github.com/pravj/gitpool/raw/master/octogrid/plotly-logo.png
-    :alt: Plotly [Image Credit : Pensrulerstape - Own work, CC BY-SA 4.0, $3]
+`interactive version <https://plot.ly/~octogrid/4/github-network-for-pravj/>`_
+
+.. figure:: https://github.com/pravj/gitpool/raw/master/octogrid/github-network.png
+   :alt: Communities in GitHub Following Network for @pravj
     
 Installation
 ~~~~~~~~~~~~
@@ -55,10 +57,11 @@ Usage
     
 **--reset** (*optional*) flag is used to clear the cache storage for a given user
 
-octogrid in action
-~~~~~~~~~~~~~~~~~~
-.. figure:: https://github.com/pravj/gitpool/raw/master/octogrid/github-network.png
-   :alt: Communities in GitHub Following Network for @pravj
+Powered By
+~~~~~~~~~~
+
+.. image:: https://github.com/pravj/gitpool/raw/master/octogrid/plotly-logo.png
+    :alt: Plotly [Image Credit : Pensrulerstape - Own work, CC BY-SA 4.0, $3]
 
 License
 ~~~~~~~~~~~~
