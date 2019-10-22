@@ -12,7 +12,7 @@ plotly==1.9.5
 ptyprocess==0.5
 python-igraph==0.7.1.post6
 pytz==2015.7
-requests==2.9.1
+requests==2.20.0
 simplegeneric==0.8.1
 six==1.10.0
 traitlets==4.1.0
